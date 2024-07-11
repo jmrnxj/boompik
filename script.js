@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const gallery = document.getElementById('gallery');
+    const imageGrid = document.getElementById('image-grid');
     const searchInput = document.getElementById('search');
-
     const images = [
-        'image1.jpg',
-        'image2.jpg',
-        'image3.jpg',
-        // add your image filenames here
+        'images/profile1.jpg',
+        'images/profile2.jpg',
+        'images/profile3.jpg',
+        'images/profile4.jpg',
+        'images/profile5.jpg',
+        // Add more images as needed
     ];
 
-    function displayImages(imageArray) {
-        gallery.innerHTML = '';
-        imageArray.forEach(image => {
-            const imageContainer = document.createElement('div');
-            imageContainer.classList.add('image-container');
-            imageContainer.innerHTML = `<img src="image/${image}" alt="Profile Picture">`;
-            gallery.appendChild(imageContainer);
-        });
-    }
+    const loadImages = (filter = '') => {
+        imageGrid.innerHTML = '';
+        images
+            .filter(image => image.toLowerCase().includes(filter.toLowerCase()))
+            .forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imageGrid.appendChild(imgElement);
+            });
+    };
 
     searchInput.addEventListener('input', () => {
-        const searchText = searchInput.value.toLowerCase();
-        const filteredImages = images.filter(image => image.toLowerCase().includes(searchText));
-        displayImages(filteredImages);
+        loadImages(searchInput.value);
     });
 
-    displayImages(images);
+    loadImages();
 });
