@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageGrid = document.getElementById('image-grid');
     const searchInput = document.getElementById('search');
     const images = [
-        'images/profile1.jpg',
-        'images/profile2.jpg',
-        'images/profile3.jpg',
-        'images/profile4.jpg',
-        'images/profile5.jpg',
+        'images/dark-profile-pic-001.png',
+        'images/dark-profile-pic-002.png',
+        'images/dark-profile-pic-003.png',
+        'images/dark-profile-pic-004.png',
+        'images/dark-profile-pic-005.png',
         // Add more images as needed
     ];
 
